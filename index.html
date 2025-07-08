@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KasuCup (KuP) - Commission Terms & Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Soft Lavender Bliss -->
+    <!-- Application Structure Plan: The SPA uses a tabbed navigation interface. This structure was chosen to break down the dense "Terms of Service" text into manageable, thematic sections (Services, Process, Copyright, etc.). This approach prevents users from being overwhelmed by a long wall of text and allows them to quickly find specific information they need, such as policies on refunds or revisions. This improves usability and clarity, which is critical for a contractual document. -->
+    <!-- Visualization & Content Choices: Report Info: DOs/DON'Ts -> Goal: Clarity -> Viz: Two-column layout with check/cross icons -> Justification: Quickly differentiate allowed vs. disallowed content. Report Info: Additional Costs ($1.10) -> Goal: Highlight financial impact -> Viz: Bar Chart (Chart.js) -> Justification: Visually emphasizes potential extra fees, making them impossible to miss. Report Info: Process Flow -> Goal: Explain workflow -> Viz: Numbered list with icons -> Justification: Simplifies the step-by-step process from request to delivery. All other text is organized into cards and lists for scannability. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav-button.active {
+            background-color: #6D28D9;
+            color: #FFFFFF;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 250px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body class="bg-violet-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-violet-800">KasuCup (KuP)</h1>
+            <p class="text-xl text-slate-600 mt-2">Commission Terms & Service</p>
+        </header>
+
+        <nav class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+            <button data-target="services" class="nav-button active text-sm md:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-md hover:bg-violet-200 transition-colors duration-300">Services</button>
+            <button data-target="process" class="nav-button text-sm md:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-md hover:bg-violet-200 transition-colors duration-300">Process & Payment</button>
+            <button data-target="revisions" class="nav-button text-sm md:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-md hover:bg-violet-200 transition-colors duration-300">Revisions & Delivery</button>
+            <button data-target="usage" class="nav-button text-sm md:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-md hover:bg-violet-200 transition-colors duration-300">Usage & Copyright</button>
+            <button data-target="cancellations" class="nav-button text-sm md:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-md hover:bg-violet-200 transition-colors duration-300">Cancellations</button>
+        </nav>
+
+        <main class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            
+            <section id="services" class="content-section active">
+                <h2 class="text-2xl font-bold text-violet-700 mb-4">Services Offered</h2>
+                <p class="text-slate-600 mb-6">Here is a guide to what I can and cannot create for your commission. My goal is to work on any art style and fandom, with a little touch of my own creative "rubber sauce".</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold text-green-800 mb-3 flex items-center">
+                            <span class="text-2xl mr-2">✅</span> What I DO
+                        </h3>
+                        <ul class="list-disc list-inside text-slate-700 space-y-2">
+                            <li>OC x Canon</li>
+                            <li>Fanart</li>
+                            <li>Ships</li>
+                            <li>Non-problematic self-shipping</li>
+                            <li>Furries</li>
+                            <li>Sonas</li>
+                            <li>OC’s (Original Characters)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3 flex items-center">
+                             <span class="text-2xl mr-2">❌</span> What I DON'T Do
+                        </h3>
+                        <ul class="list-disc list-inside text-slate-700 space-y-2">
+                            <li>Proshipping</li>
+                            <li>Explicit Gore</li>
+                            <li>Content NSFW</li>
+                            <li>Problematic topics or people</li>
+                            <li>AI Training</li>
+                            <li>Anything I feel uncomfortable with</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="process" class="content-section">
+                <h2 class="text-2xl font-bold text-violet-700 mb-4">Application and Payment Process</h2>
+                <p class="text-slate-600 mb-6">The process is designed to be simple and clear. Please follow these steps to ensure a smooth commission experience.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="text-2xl font-bold text-violet-500 bg-violet-100 rounded-full w-10 h-10 flex items-center justify-center">1</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Request your Commission</h3>
+                            <p class="text-slate-600">Contact me directly through the social media where you found my services advertised (Discord DMs, Instagram, etc.).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-2xl font-bold text-violet-500 bg-violet-100 rounded-full w-10 h-10 flex items-center justify-center">2</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Provide Necessary Information</h3>
+                            <p class="text-slate-600">Give clear references and details (characters, pose, expressions, etc.). The more info, the better!</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start gap-4">
+                        <div class="text-2xl font-bold text-violet-500 bg-violet-100 rounded-full w-10 h-10 flex items-center justify-center">3</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Complete Payment</h3>
+                            <p class="text-slate-600">Full payment is required in advance via <span class="font-bold text-blue-600">PayPal</span>. All prices are quoted in USD.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="revisions" class="content-section">
+                 <h2 class="text-2xl font-bold text-violet-700 mb-4">Work Process, Revisions & Delivery</h2>
+                 <p class="text-slate-600 mb-6">I'll keep you updated throughout the process. Here’s how revisions and delivery work to ensure you're happy with the final piece.</p>
+                 <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Review Stages</h3>
+                        <p class="text-slate-600">You will get unlimited free reviews during the sketch and line art stages (with a watermark for security). In the color stage, you'll get 1-2 final reviews to check if everything is perfect.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Potential Additional Costs</h3>
+                        <p class="text-slate-600 mb-4">Some changes or special requests may incur a small extra fee. The chart below visualizes these costs.</p>
+                        <div class="chart-container">
+                            <canvas id="costsChart"></canvas>
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class="font-semibold text-lg mb-2">Delivery Times</h3>
+                        <p class="text-slate-600">Estimated delivery times are provided when you order and may vary based on complexity. I'll inform you of any unexpected delays.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="usage" class="content-section">
+                <h2 class="text-2xl font-bold text-violet-700 mb-4">Use of the Work & Copyright</h2>
+                <p class="text-slate-600 mb-6">It's important to understand how you can use your commissioned artwork. These rules protect both you as the client and me as the artist.</p>
+                 <div class="space-y-4">
+                    <div>
+                        <h3 class="font-semibold text-lg">Personal Use</h3>
+                        <p class="text-slate-600">The artwork is for your personal, non-commercial use (e.g., profile pictures, wallpapers). Please provide credit to me as the artist when sharing online.</p>
+                    </div>
+                     <div>
+                        <h3 class="font-semibold text-lg">Artist's Rights</h3>
+                        <p class="text-slate-600">I retain the copyright to my artwork and may use it for my portfolio or promotional materials, unless we agree otherwise.</p>
+                    </div>
+                     <div>
+                        <h3 class="font-semibold text-lg">Commercial Use</h3>
+                        <p class="text-slate-600">If you want to use the art for commercial purposes (merchandise, ads, etc.), please discuss it with me beforehand. This requires a separate fee for commercial usage rights.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="cancellations" class="content-section">
+                <h2 class="text-2xl font-bold text-violet-700 mb-4">Refunds and Cancellations</h2>
+                 <p class="text-slate-600 mb-6">This section outlines the policies for cancellations to ensure fairness for both of us.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Cancellation by Client</h3>
+                        <p class="text-slate-600">A partial refund may be possible if you cancel during the early sketch stage. No refunds will be offered once the work is advanced (line art, color) or completed.</p>
+                    </div>
+                     <div>
+                        <h3 class="text-xl font-semibold mb-2">Cancellation by Artist</h3>
+                        <p class="text-slate-600">I reserve the right to cancel a commission for any valid reason (e.g., discomfort with the request, communication issues). If so, a refund will be issued proportional to the work not completed.</p>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        
+        <footer class="text-center mt-8">
+            <p class="text-slate-500">By submitting a commission request, you claim that you have read, understood, and accepted these terms and conditions.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navButtons = document.querySelectorAll('.nav-button');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            function switchTab(targetId) {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                navButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+
+                document.getElementById(targetId).classList.add('active');
+                document.querySelector(`[data-target="${targetId}"]`).classList.add('active');
+            }
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+                    switchTab(targetId);
+                });
+            });
+
+            function createCostChart() {
+                const ctx = document.getElementById('costsChart').getContext('2d');
+                if (window.myCostsChart instanceof Chart) {
+                    window.myCostsChart.destroy();
+                }
+                window.myCostsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Major Revisions', 'Priority Service'],
+                        datasets: [{
+                            label: 'Additional Cost (USD)',
+                            data: [1.10, 1.10],
+                            backgroundColor: [
+                                'rgba(167, 139, 250, 0.6)',
+                                'rgba(124, 58, 237, 0.6)'
+                            ],
+                            borderColor: [
+                                'rgba(167, 139, 250, 1)',
+                                'rgba(124, 58, 237, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toFixed(2);
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.y !== null) {
+                                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            if (document.getElementById('costsChart')) {
+                createCostChart();
+            }
+
+            // Ensure chart is created if its tab is clicked later
+            const revisionsButton = document.querySelector('[data-target="revisions"]');
+            revisionsButton.addEventListener('click', () => {
+                 if (document.getElementById('costsChart') && !window.myCostsChart) {
+                    createCostChart();
+                 }
+            });
+        });
+    </script>
+
+</body>
+</html>
